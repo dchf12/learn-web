@@ -129,3 +129,29 @@ img {
   font-size: 0.625rem;
   padding: 15px 0;
 }
+
+
+/* SP */
+
+@media screen and (max-width: 1024px) {
+  .inner {
+    padding: 0 40px;
+  }
+  /* header */
+  #header {
+    padding: 0 10px;
+  }
+  /* Mainvisual */
+  #mainvisual {
+    padding: 0 10px;
+  }
+  /* Detail */
+  #detail .content {
+    flex-direction: column;
+    /* 縦並びにする */
+  }
+  #detail .content .img {
+    width: 100%;
+    margin: 0 0 25px 0;
+  }
+}
