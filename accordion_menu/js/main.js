@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
   // アコーディオンメニューのラベルがクリックされた場合
-  $("#ac-menu .label").on("click", function() {
+  $("#ac-menu .label").on("click", function () {
     // labelクラスの次の要素（detailクラス）の表示・非表示を切り替える
     $(this).next().slideToggle();
     // labelクラスにopenクラスを追加したり削除したりする

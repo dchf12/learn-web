@@ -1,53 +1,53 @@
 html {
-    font-size: 100%;
+  font-size: 100%;
 }
 
 body {
-    color: #383e45;
-    font-size: 0.9rem;
+  color: #383e45;
+  font-size: .9rem;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 img {
-    max-width: 100%;
-    border-style: none;
+  border-style: none;
+  max-width: 100%;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .site-title {
-    width: 120px;
-    line-height: 1px;
-    padding: 10px 0;
+  line-height: 1px;
+  padding: 10px 0;
+  width: 120px;
 }
 
 .site-title a {
-    display: block;
+  display: block;
 }
 
 .section-title {
-    display: inline-block;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 60px;
-    border-bottom: solid 1px #272247;
+  border-bottom: solid 1px #272247;
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
 .content-title {
-    font-size: 1rem;
-    margin: 10px 0;
+  font-size: 1rem;
+  margin: 10px 0;
 }
 
 .wrapper {
-    max-width: 960px;
-    margin: 0 auto 100px auto;
-    padding: 0 5%;
-    text-align: center;
+  margin: 0 auto 100px auto;
+  max-width: 960px;
+  padding: 0 5%;
+  text-align: center;
 }
 
 
@@ -55,118 +55,116 @@ li {
 ヘッダー
 -------------------------------------------*/
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 #header ul {
-    display: flex;
-    padding: 10px 0;
+  display: flex;
+  padding: 10px 0;
 }
 
 #header li {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 #header li a {
-    color: #272247;
+  color: #272247;
 }
 
 #header li a:hover {
-    opacity: 0.7;
+  opacity: .7;
 }
 
 /*-------------------------------------------
 Mainvisual
 -------------------------------------------*/
 #mainvisual {
-    padding-bottom: 80px;
-    text-align: center;
+  padding-bottom: 80px;
+  text-align: center;
 }
 
 #mainvisual img {
-    width: 100%;
-    max-width: 1920px;
-    height: 600px;
-    object-fit: cover;
+  height: 600px;
+  max-width: 1920px;
+  object-fit: cover;
+  width: 100%;
 }
 
 /*-------------------------------------------
 About
 -------------------------------------------*/
 #about .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 #about img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 30px;
+  border-radius: 50%;
+  height: 100px;
+  margin-right: 30px;
+  width: 100px;
 }
 
 #about .text {
-    text-align: initial;
+  text-align: initial;
 }
 
 /*-------------------------------------------
 Bicycle
 -------------------------------------------*/
 #bicycle ul {
-    display: flex;
-    justify-content: space-between
+  display: flex;
+  justify-content: space-between;
 }
 
 #bicycle li {
-    padding: 10px;
+  padding: 10px;
 }
 
 /*-------------------------------------------
 footer
 -------------------------------------------*/
 #footer {
-    font-size: 0.5rem;
-    padding: 10px 0;
-    text-align: center;
+  font-size: .5rem;
+  padding: 10px 0;
+  text-align: center;
 }
 
 /*-------------------------------------------
 SP
 -------------------------------------------*/
 @media screen and (max-width: 600px) {
-
-    /*-------------------------------------------
+  /*-------------------------------------------
   Mainvisual
   -------------------------------------------*/
-    #mainvisual img {
-        height: calc(100vh - 60px);
-    }
+  #mainvisual img {
+    height: calc(100vh - 60px);
+  }
 
-    /*-------------------------------------------
+  /*-------------------------------------------
   About
   -------------------------------------------*/
-    #about .content {
-        flex-direction: column;
-    }
+  #about .content {
+    flex-direction: column;
+  }
 
-    #about img {
-        margin: 0;
-    }
+  #about img {
+    margin: 0;
+  }
 
-    /*-------------------------------------------
+  /*-------------------------------------------
   Bicycle
   -------------------------------------------*/
-    #bicycle ul {
-        flex-direction: column;
+  #bicycle ul {
+    flex-direction: column;
+  }
 
-    }
-
-    #bicycle li {
-        width: 100%;
-        margin-bottom: 30px;
-    }
+  #bicycle li {
+    margin-bottom: 30px;
+    width: 100%;
+  }
 }

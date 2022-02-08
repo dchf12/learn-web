@@ -13,9 +13,9 @@ ul {
 }
 
 .content {
+  margin: 100px auto;
   max-width: 960px;
   padding: 0 20px;
-  margin: 100px auto;
 }
 
 .title {
@@ -23,7 +23,6 @@ ul {
   font-weight: normal;
   margin-bottom: 50px;
 }
-
 
 /* ac-menu */
 
@@ -48,7 +47,6 @@ ul {
   background-color: #ffda5f;
 }
 
-
 /*
 ラベル右側のアイコン「＋」を設定
 beforeが横棒
@@ -57,21 +55,20 @@ afterが縦棒
 
 #ac-menu .label::before,
 #ac-menu .label::after {
-  content: '';
-  width: 20px;
-  height: 1px;
   background: #000;
+  content: "";
+  height: 1px;
   position: absolute;
-  top: 50%;
   right: 5%;
+  top: 50%;
   transform: translateY(-50%);
+  width: 20px;
 }
 
 #ac-menu .label::after {
   transform: translateY(-50%) rotate(90deg);
   transition: .5s;
 }
-
 
 /*
 アコーディオンメニューが開いている場合
@@ -92,7 +89,6 @@ afterが縦棒
   transform: rotate(180deg);
 }
 
-
 /*
 アコーディオンメニューのコンテンツ部分は、「display: none;」で非表示にしておく。
 ラベルクリック時にjQueryの「  $(this).next().slideToggle();」で表示に切り替わる
@@ -100,8 +96,8 @@ afterが縦棒
 
 #ac-menu .detail {
   border-top: solid 1px #ccc;
-  padding: 35px 30px;
   display: none;
+  padding: 35px 30px;
 }
 
 #ac-menu .detail dl {
@@ -110,16 +106,15 @@ afterが縦棒
 }
 
 #ac-menu .detail dt {
-  width: 20%;
   font-weight: bold;
   margin-bottom: 40px;
+  width: 20%;
 }
 
 #ac-menu .detail dd {
-  width: 80%;
   margin-bottom: 40px;
+  width: 80%;
 }
-
 
 /*-------------------------------------------
 SP
@@ -136,11 +131,11 @@ SP
     flex-direction: column;
   }
   #ac-menu .detail dt {
-    width: 100%;
     margin-bottom: 10px;
+    width: 100%;
   }
   #ac-menu .detail dd {
-    width: 100%;
     margin-left: 10px;
+    width: 100%;
   }
 }
