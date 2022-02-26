@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+#splash {
+  /* fixedで全面に固定 */
+  background: #333;
+  color: #fff;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+#container {
+  align-items: center;
+  background-color: #ccc;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
