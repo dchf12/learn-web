@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+#splash {
+  /* fixedで全面に固定 */
+  color: #fff;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+/* Loadingバー中央配置　*/
+#splash_text {
+  color: #fff;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 999;
+}
+#container {
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.loader_cover {
+  background-color: #333;
+  height: 50%;
+  transform: scaleY(1);
+  transition: all 0.5s ease-out;
+  width: 100%;
+}
+.loader_cover-up {
+  transform-origin: center top;
+}
+.loader_cover-down {
+  bottom: 0;
+  position: absolute;
+  transform-origin: center bottom;
+}
+
+/* after */
+.coveranime {
+  transform: scaleY(0);
+}
