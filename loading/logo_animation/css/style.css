@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+#splash {
+  background-color: #ccc;
+  /* fixedで全面に固定 */
+  color: #fff;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+/* logo　*/
+#splash__logo {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#splash__logo img {
+  width: 30%;
+}
+.fadeIn {
+  animation: fadeInAnime 0.5s forwards;
+  opacity: 0;
+}
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#container {
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
