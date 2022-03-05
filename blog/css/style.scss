@@ -1,4 +1,5 @@
 @charset "UTF-8";
+$font-size: 0.875rem;
 
 html {
   font-size: 100%;
@@ -13,101 +14,68 @@ a {
   text-decoration: none;
 }
 img {
-  max-width: 100vh;
+  max-width: 100%;
 }
 li {
   list-style: none;
 }
-div {
-  border: rgb(255, 0, 0);
-  border-style: double;
-}
-/*
-コンテンツ幅を設定するための共通クラス
-*/
+
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 16px;
 }
-.readmore {
-  font-size: 0.875rem;
-  text-align: center;
-}
-/*
-疑似要素で下線を設定するために、「position: relative;」を設定
-*/
-.readmore a {
-  color: #333;
-  padding-bottom: 1px;
-  position: relative;
-}
-/*
-「position: absolute;」を設定し、left、bottomで下線の位置を調整
-widthとheightで線の長さと高さを設定
-疑似要素で線を表示させるためには、「content: '';」を設定すること
-「transition: all 200ms ease;」でホバー時の速度などを設定
-*/
-.readmore a::after {
-  background: #333;
-  bottom: 0;
-  content: "";
-  height: 1px;
-  left: 0;
-  position: absolute;
-  transition: all 200ms ease;
-  width: 100%;
-}
-/*
-ホバー時の下線の設定
-「opacity: 0;」下線を非表示
-「transform: translateY(3px);」下に3px移動
-→下に3px移動しながら下線を非表示にする
-*/
-.readmore a:hover::after {
-  opacity: 0;
-  transform: translateY(3px);
+.article {
+  &__readmore {
+    font-size: $font-size;
+    text-align: center;
+    a {
+      color: #333;
+      padding-bottom: 1px;
+      position: relative;
+      &:hover {
+        opacity: 0;
+        transform: translateY(3px);
+        &::after {
+          background: #333;
+          bottom: 0;
+          content: "";
+          height: 1px;
+          left: 0;
+          position: absolute;
+          transition: all 200ms ease;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
-/*-------------------------------------------
-header
--------------------------------------------*/
-/*
-「position: fixed;」でヘッダーを固定し、「z-index: 10;」で前面に表示
-※他のコンテンツでpositionをrelative、absolute、fixedのいずれかに
-設定している場合は、z-indexの数値が大きい方が前面に表示される
-*/
-#header {
+.header {
   background-color: #fff;
+  display: block;
   position: fixed;
   width: 100%;
   z-index: 10;
-}
-#header .site-title {
-  line-height: 1px;
-  padding: 20px 16px;
-}
-/*
-「display: inline-block;」でリンクを親要素の範囲に広げる
-※blockを指定すると横幅いっぱいまで広がってしまうため、
-inline-blockを設定している
-*/
-.header {
-  &__site-title a {
-    display: inline-block;
+  &__site-title {
+    line-height: 10px;
+    padding: 20px 10px;
+    a {
+      display: inline-block;
+    }
   }
   &__navi {
     background-color: #333;
-    & a {
+    a {
       color: #fff;
     }
-    & ul {
+    ul {
       align-items: center;
       display: flex;
       justify-content: flex-start;
     }
-    & li {
-      font-size: 0.875rem;
+    li {
+      font-size: $font-size;
       padding: 10px 60px 10px 0;
     }
   }
@@ -137,80 +105,80 @@ container
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
-}
-main {
-  width: 65%;
-}
-main article {
-  margin-bottom: 80px;
-}
-main .article-title {
-  font-size: 1.5rem;
-  margin: 10px 0 15px 0;
-}
-main ul {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-}
-main li {
-  font-size: 0.875rem;
-  margin-right: 20px;
-}
-main .text {
-  padding: 10px 40px 30px 40px;
-}
+  .main {
+    width: 65%;
+    .article {
+      margin-bottom: 80px;
+      &__title {
+        font-size: 1.5rem;
+        margin: 10px 0 15px 0;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+    li {
+      font-size: $font-size;
+      margin-right: 20px;
+    }
+    .text {
+      padding: 10px 40px 30px 40px;
+    }
+  }
 
-/*-------------------------------------------
+  /*-------------------------------------------
 aside
 -------------------------------------------*/
-.sidebar {
-  padding: 20px;
-  width: 33%;
-}
-.sidebar .side-title {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-.author {
-  margin-bottom: 60px;
-  text-align: center;
-}
-.author img {
-  border-radius: 50%;
-  height: 130px;
-  margin-bottom: 30px;
-  width: 130px;
-}
-.author .profile {
-  font-size: 0.875rem;
-  text-align: left;
-}
-.ranking {
-  margin-bottom: 60px;
-  text-align: center;
-}
-.ranking article {
-  margin-bottom: 30px;
-}
-.ranking .article-title {
-  font-size: 0.875rem;
-  font-weight: normal;
-  text-align: left;
-}
-.archive {
-  margin-bottom: 60px;
-  text-align: center;
-}
-.archive ul {
-  border-bottom: solid 1px #777;
-}
-.archive li {
-  border-top: solid 1px #777;
-  font-size: 0.875rem;
-  padding: 20px;
-  text-align: left;
+  .sidebar {
+    padding: 20px;
+    width: 33%;
+    &__title {
+      font-size: 1.125rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .author {
+      margin-bottom: 60px;
+      text-align: center;
+      img {
+        border-radius: 50%;
+        height: 130px;
+        margin-bottom: 30px;
+        width: 130px;
+      }
+      .profile {
+        font-size: $font-size;
+        text-align: left;
+      }
+    }
+    .ranking {
+      margin-bottom: 60px;
+      text-align: center;
+      article {
+        margin-bottom: 30px;
+        &__title {
+          font-size: $font-size;
+          font-weight: normal;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .archive {
+    margin-bottom: 60px;
+    text-align: center;
+    ul {
+      border-bottom: solid 1px #777;
+    }
+    li {
+      border-top: solid 1px #777;
+      font-size: $font-size;
+      padding: 20px;
+      text-align: left;
+    }
+  }
 }
 
 /*-------------------------------------------
@@ -218,59 +186,56 @@ footer
 -------------------------------------------*/
 .footer {
   background-color: #f7f7f7;
-  font-size: 0.875rem;
+  font-size: $font-size;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  &__item {
+    width: 30%;
+    &--title {
+      font-size: 1.125rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    &--about-list {
+      margin: 20px 0;
+      li {
+        margin-bottom: 5px;
+      }
+      .arrow {
+        color: #333;
+        display: inline-block;
+        padding-left: 12px;
+        position: relative;
+        &::before {
+          border-color: transparent transparent transparent #333;
+          border-style: solid;
+          border-width: 6px 0 6px 8px;
+          content: "";
+          height: 0;
+          left: 0;
+          margin-top: -6px;
+          position: absolute;
+          top: 50%;
+          width: 0;
+        }
+      }
+    }
+
+    &--menu-list {
+      border-bottom: solid 1px #777;
+      li {
+        border-top: solid 1px #777;
+        padding: 15px;
+        text-align: left;
+      }
+    }
+  }
 }
-#footer .content {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-#footer .item {
-  width: 30%;
-}
-#footer .footer-title {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-#footer ul.about-list {
-  margin: 20px 0;
-}
-#footer ul.about-list li {
-  margin-bottom: 5px;
-}
-#footer ul.about-list .arrow {
-  color: #333;
-  display: inline-block;
-  padding-left: 12px;
-  position: relative;
-}
-/*
-疑似要素で三角矢印を表示
-border～プロパティで三角を作り、positionで位置調整
-*/
-#footer ul.about-list .arrow::before {
-  border-color: transparent transparent transparent #333;
-  border-style: solid;
-  border-width: 6px 0 6px 8px;
-  content: "";
-  height: 0;
-  left: 0;
-  margin-top: -6px;
-  position: absolute;
-  top: 50%;
-  width: 0;
-}
-#footer .menu-list {
-  border-bottom: solid 1px #777;
-}
-#footer .menu-list > li {
-  border-top: solid 1px #777;
-  padding: 15px;
-  text-align: left;
-}
-#footer .copyright {
+.copyright {
   font-size: 0.75rem;
   padding: 10px 0;
   text-align: center;
