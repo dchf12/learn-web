@@ -1,32 +1,27 @@
 @charset "UTF-8";
+
 html {
   font-size: 100%;
 }
-
 body {
   color: #333;
   font-family: "Noto Sans", "Noto Sans JP", sans-serif;
   font-size: 1rem;
 }
-
 a {
   color: #333;
   text-decoration: none;
 }
-
 img {
   max-width: 100vh;
 }
-
 li {
   list-style: none;
 }
-
 div {
-  border: red;
+  border: rgb(255, 0, 0);
   border-style: double;
 }
-
 /*
 コンテンツ幅を設定するための共通クラス
 */
@@ -35,12 +30,10 @@ div {
   max-width: 1200px;
   padding: 0 16px;
 }
-
 .readmore {
   font-size: 0.875rem;
   text-align: center;
 }
-
 /*
 疑似要素で下線を設定するために、「position: relative;」を設定
 */
@@ -49,7 +42,6 @@ div {
   padding-bottom: 1px;
   position: relative;
 }
-
 /*
 「position: absolute;」を設定し、left、bottomで下線の位置を調整
 widthとheightで線の長さと高さを設定
@@ -63,11 +55,9 @@ widthとheightで線の長さと高さを設定
   height: 1px;
   left: 0;
   position: absolute;
-  -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
   width: 100%;
 }
-
 /*
 ホバー時の下線の設定
 「opacity: 0;」下線を非表示
@@ -76,8 +66,7 @@ widthとheightで線の長さと高さを設定
 */
 .readmore a:hover::after {
   opacity: 0;
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
+  transform: translateY(3px);
 }
 
 /*-------------------------------------------
@@ -94,110 +83,80 @@ header
   width: 100%;
   z-index: 10;
 }
-
 #header .site-title {
   line-height: 1px;
   padding: 20px 16px;
 }
-
 /*
 「display: inline-block;」でリンクを親要素の範囲に広げる
 ※blockを指定すると横幅いっぱいまで広がってしまうため、
 inline-blockを設定している
 */
-.header__site-title a {
-  display: inline-block;
-}
-
-.header__navi {
-  background-color: #333;
-}
-
-.header__navi a {
-  color: #fff;
-}
-
-.header__navi ul {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.header__navi li {
-  font-size: 0.875rem;
-  padding: 10px 60px 10px 0;
+.header {
+  &__site-title a {
+    display: inline-block;
+  }
+  &__navi {
+    background-color: #333;
+    & a {
+      color: #fff;
+    }
+    & ul {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+    }
+    & li {
+      font-size: 0.875rem;
+      padding: 10px 60px 10px 0;
+    }
+  }
 }
 
 /*-------------------------------------------
 pickup
 -------------------------------------------*/
 .pickup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 60px;
   padding-top: 150px;
-}
-
-.pickup__article {
-  width: 32%;
-}
-
-.pickup--title {
-  font-size: 1rem;
-  margin: 10px 0 15px 0;
+  &__article {
+    width: 32%;
+  }
+  &--title {
+    font-size: 1rem;
+    margin: 10px 0 15px 0;
+  }
 }
 
 /*-------------------------------------------
 container
 -------------------------------------------*/
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 60px;
 }
-
 main {
   width: 65%;
 }
-
 main article {
   margin-bottom: 80px;
 }
-
 main .article-title {
   font-size: 1.5rem;
   margin: 10px 0 15px 0;
 }
-
 main ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   margin-bottom: 10px;
 }
-
 main li {
   font-size: 0.875rem;
   margin-right: 20px;
 }
-
 main .text {
   padding: 10px 40px 30px 40px;
 }
@@ -209,54 +168,44 @@ aside
   padding: 20px;
   width: 33%;
 }
-
 .sidebar .side-title {
   font-size: 1.125rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
-
 .author {
   margin-bottom: 60px;
   text-align: center;
 }
-
 .author img {
   border-radius: 50%;
   height: 130px;
   margin-bottom: 30px;
   width: 130px;
 }
-
 .author .profile {
   font-size: 0.875rem;
   text-align: left;
 }
-
 .ranking {
   margin-bottom: 60px;
   text-align: center;
 }
-
 .ranking article {
   margin-bottom: 30px;
 }
-
 .ranking .article-title {
   font-size: 0.875rem;
   font-weight: normal;
   text-align: left;
 }
-
 .archive {
   margin-bottom: 60px;
   text-align: center;
 }
-
 .archive ul {
   border-bottom: solid 1px #777;
 }
-
 .archive li {
   border-top: solid 1px #777;
   font-size: 0.875rem;
@@ -271,43 +220,32 @@ footer
   background-color: #f7f7f7;
   font-size: 0.875rem;
 }
-
 #footer .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding-bottom: 50px;
   padding-top: 50px;
 }
-
 #footer .item {
   width: 30%;
 }
-
 #footer .footer-title {
   font-size: 1.125rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
-
 #footer ul.about-list {
   margin: 20px 0;
 }
-
 #footer ul.about-list li {
   margin-bottom: 5px;
 }
-
 #footer ul.about-list .arrow {
   color: #333;
   display: inline-block;
   padding-left: 12px;
   position: relative;
 }
-
 /*
 疑似要素で三角矢印を表示
 border～プロパティで三角を作り、positionで位置調整
@@ -324,17 +262,14 @@ border～プロパティで三角を作り、positionで位置調整
   top: 50%;
   width: 0;
 }
-
 #footer .menu-list {
   border-bottom: solid 1px #777;
 }
-
 #footer .menu-list > li {
   border-top: solid 1px #777;
   padding: 15px;
   text-align: left;
 }
-
 #footer .copyright {
   font-size: 0.75rem;
   padding: 10px 0;
@@ -344,4 +279,3 @@ border～プロパティで三角を作り、positionで位置調整
 /*-------------------------------------------
 SP
 -------------------------------------------*/
-/*# sourceMappingURL=style.css.map */
