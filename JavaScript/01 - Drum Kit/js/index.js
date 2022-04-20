@@ -1,8 +1,12 @@
+"use strict";
 const removeTransition = (e) => {
     if (e.propertyName !== 'transform') {
         return;
     }
-    e.target.classList.remove('playing');
+    if (!(e.currentTarget instanceof HTMLInputElement)) {
+        return;
+    }
+    e.currentTarget.classList.remove('playing');
 };
 const playSound = (e) => {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
