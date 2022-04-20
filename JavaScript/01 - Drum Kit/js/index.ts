@@ -2,10 +2,10 @@ const removeTransition = (e: TransitionEvent) => {
   if (e.propertyName !== 'transform') {
     return;
   }
-  if (!(e.currentTarget instanceof HTMLInputElement)) {
+  if (!(e.target instanceof HTMLInputElement)) {
     return;
   }
-  e.currentTarget.classList.remove('playing');
+  e.target.classList.remove('playing');
 };
 
 const playSound = (e: KeyboardEvent) => {
