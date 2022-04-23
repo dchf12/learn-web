@@ -1,7 +1,8 @@
-'use strict';
 // Get your shorts on - this is an array workout!
 // ## Array Cardio Day 1
+
 // Some data we can work with
+
 const inventors = [
   { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
   { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
@@ -16,6 +17,7 @@ const inventors = [
   { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
   { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 },
 ];
+
 const people = [
   'Bernhard, Sandra',
   'Bethea, Erin',
@@ -59,20 +61,25 @@ const people = [
   'Beecher, Henry',
   'Biondo, Frank',
 ];
+
 // 1. Filter the list of inventors for those who were born in the 1500's
 const fifteen = inventors.filter((inventor) => inventor.year >= 1500 && inventor.year < 1600);
 console.table(fifteen);
+
 // 2. Give us an array of the inventor first and last names
 const fullNames = inventors.map((inventor) => `${inventor.first} ${inventor.last}`);
 console.log(fullNames);
+
 // 3. Sort the inventors by birthday, oldest to youngest
 const ordered = inventors.sort((a, b) => (a.year > b.year ? 1 : -1));
 console.table(ordered);
+
 // 4. How many years did all the inventors live?
 const totalYears = inventors.reduce((total, inventor) => {
   return total + (inventor.passed - inventor.year);
 }, 0);
 console.log(totalYears);
+
 // 5. Sort the inventors by years lived
 const oldest = inventors.sort(function (a, b) {
   const lastInventor = a.passed - a.year;
@@ -80,6 +87,7 @@ const oldest = inventors.sort(function (a, b) {
   return lastInventor > nextInventor ? -1 : 1;
 });
 console.table(oldest);
+
 // 6. sort Exercise
 // Sort the people alphabetically by last name
 const alpha = people.sort((lastOne, nextOne) => {
@@ -88,6 +96,7 @@ const alpha = people.sort((lastOne, nextOne) => {
   return aLast > bLast ? 1 : -1;
 });
 console.log(alpha);
+
 // 7. Reduce Exercise
 // Sum up the instances of each of these
 const data = [
@@ -107,11 +116,16 @@ const data = [
   'truck',
   'pogostick',
 ];
-const transportation = data.reduce((obj, item) => {
+
+interface Obj {
+  [key: string]: number;
+}
+const transportation = data.reduce((obj: Obj, item: string): Obj => {
   if (!obj[item]) {
     obj[item] = 0;
   }
   obj[item]++;
   return obj;
 }, {});
+
 console.log(transportation);
