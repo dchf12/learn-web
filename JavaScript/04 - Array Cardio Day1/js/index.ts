@@ -117,7 +117,10 @@ const data = [
   'pogostick',
 ];
 
-const transportation = data.reduce((obj, item) => {
+interface Obj {
+  [key: string]: number;
+}
+const transportation = data.reduce((obj: Obj, item: string): Obj => {
   if (!obj[item]) {
     obj[item] = 0;
   }
